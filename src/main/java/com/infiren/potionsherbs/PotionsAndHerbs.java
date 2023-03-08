@@ -1,7 +1,13 @@
 package com.infiren.potionsherbs;
 
+import com.infiren.potionsherbs.blocks.AconiteBlock;
+import com.infiren.potionsherbs.init.BlockRegistry;
+import com.infiren.potionsherbs.init.ItemRegistry;
+import com.infiren.potionsherbs.init.PotionRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -26,23 +32,32 @@ public class PotionsAndHerbs {
     private static final Logger LOGGER = LogManager.getLogger();
 
     public PotionsAndHerbs() {
-        // Register the setup method for modloading
+
+
+        MinecraftForge.EVENT_BUS.register(this);
+        BlockRegistry.registerBlocks();
+        PotionRegistry.registerPotions();
+        ItemRegistry.registerItems();
+        //PotionRegistry.registerPotions();
+        //HerbsPotions.registerPotions();
+
+
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        // Register the enqueueIMC method for modloading
+
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
-        // Register the processIMC method for modloading
+
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
-        // Register the doClientStuff method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
-        // Register ourselves for server and other game events we are interested in
-        MinecraftForge.EVENT_BUS.register(this);
+
     }
+
 
     private void setup(final FMLCommonSetupEvent event) {
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        RenderTypeLookup.setRenderLayer(BlockRegistry.ACONITE_FLOWER_BLOCK.get(), RenderType.getCutout());
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {

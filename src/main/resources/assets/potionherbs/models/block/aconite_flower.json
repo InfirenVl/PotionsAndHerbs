@@ -1,0 +1,5 @@
+{
+  "parent": "block/cross",
+  "textures": {"cross": "potionherbs:block/aconite_flower"
+  }
+}
