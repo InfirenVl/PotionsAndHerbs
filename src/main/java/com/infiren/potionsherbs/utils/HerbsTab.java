@@ -9,7 +9,7 @@ public class HerbsTab extends ItemGroup {
     public static final ItemGroup HERBS_TAB = new HerbsTab(Reference.MODID);
 
     public HerbsTab(String label) {
-        super(label);
+        super("herbs_tab");
     }
 
     @Override

@@ -5,9 +5,10 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
 public class PotionsTab extends ItemGroup {
-    public static final ItemGroup HERBS_POTION_TAB = new HerbsTab(Reference.MODID);
+    public static final ItemGroup HERBS_POTION_TAB = new PotionsTab(Reference.MODID);
     public PotionsTab(String label) {
-        super(label);
+        super("potion_tab");
+
     }
 
     @Override

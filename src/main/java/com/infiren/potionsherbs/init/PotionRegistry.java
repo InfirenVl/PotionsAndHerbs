@@ -32,7 +32,7 @@ public class PotionRegistry {
 
 
 
-    public static final RegistryObject<Potion> ULNV = POTION_TYPES.register("example_block", () -> new Potion("night_vision_xui", new EffectInstance(Effects.NIGHT_VISION, ultralong)));
+    public static final RegistryObject<Potion> ULTRA_NIGHT_VISION = POTION_TYPES.register("ultra_night_potion", () -> new Potion("night_vision", new EffectInstance(Effects.NIGHT_VISION, ultralong)));
 
     //public static final Potion LONG_NIGHT_VISION = register("ultra_long_night_vision", new Potion("night_vision", new EffectInstance(Effects.NIGHT_VISION, 19600)));
 

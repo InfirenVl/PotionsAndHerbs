@@ -1,4 +1,5 @@
 {
-  "itemGroup.potionherbs": "Potions",
-  "item.potionherbs.herb_potion.effect.night_vision_xui": "Potion of Night Vision"
+  "itemGroup.herbs_tab": "Potions&Herbs: Herbs",
+  "itemGroup.potion_tab": "Potions&Herbs: Herbs",
+  "item.potionherbs.herb_potion.effect.night_vision": "Potion of Night Vision"
 }
